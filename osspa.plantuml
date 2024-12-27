@@ -11,66 +11,94 @@ title Open Source Software (OSS) Project Enterprise Architecture
 
 skinparam Style strict
 
-folder "Inputs" {
+folder "Inputs" #lightgreen {
     [Requirements and Specifications]
     [Financial Support]
     [Hosting and Infrastructure]
-    [User Feedback]
+    folder "User Feedback" {
+        [Bug Reports]
+        [Issue Reports]
+        [Feature Requests]
+    }
     [Surveys and Polls]
 }
 
-folder "Roles" {
-    :Maintainer:
-    :Contributor:
-    :Reviewer:
-    :Documenter:
-    :Designer:
-    :Community Manager:
-    :Tester:
-    :Release Manager:
-    :Security Expert:
-    :Translator:
-    :User:
-    :Creator:
+folder "People_Roles" {
+    folder "Core Development" {
+        :Maintainer:
+        :Contributor:
+        :Reviewer:
+    }
+    folder "Documentation and Design" {
+        :Documenter:
+        :Designer:
+    }
+    folder "Community and Project Management" {
+        :Creator:
+        :Community Manager:
+        :Tester:
+        :Release Manager:
+        :Security Expert:
+        :Translator:
+    }
+    folder "Users" {
+        :End User:
+        :Power User:
+    }
 }
 together {
     folder "Processes" {
-        [Planning]
-        [Designing]
-        [Developing]
-        [Testing]
-        [Documenting]
-        [Reviewing]
-        [Releasing]
-        [Monitoring]
-        [Translating]
-        [Community Engagement]
-        [Security Testing]
+        folder "Commit" {
+            [Developing]
+            [Testing Commit]
+            [Security Testing]
+            [Documenting Commit]
+        }
+        folder "Pull Request" {
+            [Designing]
+            [Reviewing]
+            [Developing]
+            [Testing PR]
+        }
+        folder "Community Support" {
+            [Planning]
+            [Documenting]
+            [Releasing]
+            [Monitoring]
+            [Translating]
+            [Community Engagement]
+            [User Support and Feedback]
+        }
+        folder "Infrastructure Management" {
+            [For Hosted OSS Implementations]
+        }
     }
 
     folder "Tools" {
         folder "Version Control" {
-            [GitHub]
-            [GitLab]
-            [Bitbucket]
-            [Git]
+            [GitHub] 
+            [Bitbucket] #lightblue
+            [Git] #lightblue
         }
         folder "Project Management and Issue Tracking" {
             [Jira]
             [Trello]
+            [GitLab] #lightblue
+            [OpenProject] #lightblue
+            [Redmine] #lightblue
         }
         folder "Code Editors and IDEs" {
-            [Visual Studio Code]
+            [Visual Studio Code] #lightblue
             [IntelliJ IDEA]
         }
         folder "Code Review" {
-            [Review Board]
+            [Review Board] #lightblue
         }
         folder "Documents" {
-            [Sphinx]
-            [MkDocs]
-            [Jekyll]
-            [Read the Docs]
+            [Sphinx] #lightblue
+            [MkDocs] #lightblue
+            [Jekyll] #lightblue
+            [Read the Docs] #lightblue
             [Google Docs]
         }
         folder "Design and UX" {
@@ -78,44 +106,48 @@ together {
             [Sketch]
             [Figma]
             [InVision]
-            [GIMP]
+            [GIMP] #lightblue
         }
         folder "Communication and Collaboration" {
             [Slack]
-            [Discord]
+            [Discord] #lightblue
             [Twitter]
-            [GitHub Discussions]
-            [Discourse]
+            [GitHub Discussions] #lightblue
+            [Discourse] #lightblue
         }
         folder "Testing and Quality Assurance" {
-            [Selenium]
-            [PyTest]
-            [JUnit]
+            [Selenium] #lightblue
+            [PyTest] #lightblue
+            [JUnit] #lightblue
             [TestRail]
         }
         folder "Continuous Integration (CI) and Continuous Deployment (CD)" {
-            [Jenkins]
-            [Travis CI]
+            [Jenkins] #lightblue
+            [Travis CI] #lightblue
             [CircleCI]
-            [GitHub Actions]
+            [GitHub Actions] #lightblue
         }
         folder "Security" {
-            [OWASP ZAP]
+            [OWASP ZAP] #lightblue
             [Burp Suite]
             [Nessus]
-            [Metasploit]
+            [Metasploit] #lightblue
+            [GNU Privacy Guard] #lightblue
         }
         folder "Localization and Translation" {
             [POEditor]
-            [Transifex]
-            [Crowdin]
+            [Transifex] #lightblue
+            [Crowdin] #lightblue
             [Google Translate]
             [Lokalise]
+        }
+        folder "Metrics" {
+            [CHAOSS] #lightblue
         }
     }
 }
 
-folder "Outputs" {
+folder "Outputs" #lightblue {
     [Source Code]
     [Documentation]
     [Release Notes]
@@ -130,10 +162,15 @@ folder "Outputs" {
     [Localizations and Translations]
 }
 
-Inputs --> Roles
-Roles --> Processes
-Roles --> Tools
+Inputs --> People_Roles
+People_Roles --> Processes
+People_Roles --> Tools
 Processes --> Outputs
 Tools --> Outputs
+
+legend left
+|=Color |= Description |
+|<#ADD8E6>| Open Source Software Project |
+endlegend
 
 @enduml
