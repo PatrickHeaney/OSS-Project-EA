@@ -1,0 +1,139 @@
+@startuml
+'left to right direction
+
+title Open Source Software (OSS) Project Enterprise Architecture
+'Consider TOGAF using Business, Data, Application, and Technology (BDAT) Domains
+'there are other layers
+'   Business = processes
+'   Data = data assets
+'   Application = software applications
+'   Technology = infrastructure and tools
+
+skinparam Style strict
+
+folder "Inputs" {
+    [Requirements and Specifications]
+    [Financial Support]
+    [Hosting and Infrastructure]
+    [User Feedback]
+    [Surveys and Polls]
+}
+
+folder "Roles" {
+    :Maintainer:
+    :Contributor:
+    :Reviewer:
+    :Documenter:
+    :Designer:
+    :Community Manager:
+    :Tester:
+    :Release Manager:
+    :Security Expert:
+    :Translator:
+    :User:
+    :Creator:
+}
+together {
+    folder "Processes" {
+        [Planning]
+        [Designing]
+        [Developing]
+        [Testing]
+        [Documenting]
+        [Reviewing]
+        [Releasing]
+        [Monitoring]
+        [Translating]
+        [Community Engagement]
+        [Security Testing]
+    }
+
+    folder "Tools" {
+        folder "Version Control" {
+            [GitHub]
+            [GitLab]
+            [Bitbucket]
+            [Git]
+        }
+        folder "Project Management and Issue Tracking" {
+            [Jira]
+            [Trello]
+        }
+        folder "Code Editors and IDEs" {
+            [Visual Studio Code]
+            [IntelliJ IDEA]
+        }
+        folder "Code Review" {
+            [Review Board]
+        }
+        folder "Documents" {
+            [Sphinx]
+            [MkDocs]
+            [Jekyll]
+            [Read the Docs]
+            [Google Docs]
+        }
+        folder "Design and UX" {
+            [Adobe XD]
+            [Sketch]
+            [Figma]
+            [InVision]
+            [GIMP]
+        }
+        folder "Communication and Collaboration" {
+            [Slack]
+            [Discord]
+            [Twitter]
+            [GitHub Discussions]
+            [Discourse]
+        }
+        folder "Testing and Quality Assurance" {
+            [Selenium]
+            [PyTest]
+            [JUnit]
+            [TestRail]
+        }
+        folder "Continuous Integration (CI) and Continuous Deployment (CD)" {
+            [Jenkins]
+            [Travis CI]
+            [CircleCI]
+            [GitHub Actions]
+        }
+        folder "Security" {
+            [OWASP ZAP]
+            [Burp Suite]
+            [Nessus]
+            [Metasploit]
+        }
+        folder "Localization and Translation" {
+            [POEditor]
+            [Transifex]
+            [Crowdin]
+            [Google Translate]
+            [Lokalise]
+        }
+    }
+}
+
+folder "Outputs" {
+    [Source Code]
+    [Documentation]
+    [Release Notes]
+    [Binaries and Executables]
+    [Issue Tracking and Bug Reports]
+    [Test Cases and Test Results]
+    [Continuous Integration (CI) Configurations]
+    [Community Guidelines]
+    [Project Roadmap]
+    [Marketing Materials]
+    [License Information]
+    [Localizations and Translations]
+}
+
+Inputs --> Roles
+Roles --> Processes
+Roles --> Tools
+Processes --> Outputs
+Tools --> Outputs
+
+@enduml
