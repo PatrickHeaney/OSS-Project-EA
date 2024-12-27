@@ -1,13 +1,12 @@
 @startuml
-'left to right direction
+'cd "C:\Users\Dad\Python Projects\osspea"
+'git pull origin main'
+
+'git add .'
+'git commit -m "Updated osspa.plantuml"'
+'git push origin main
 
 title Open Source Software (OSS) Project Enterprise Architecture
-'Consider TOGAF using Business, Data, Application, and Technology (BDAT) Domains
-'there are other layers
-'   Business = processes
-'   Data = data assets
-'   Application = software applications
-'   Technology = infrastructure and tools
 
 skinparam Style strict
 
@@ -148,18 +147,26 @@ together {
 }
 
 folder "Outputs" #lightblue {
-    [Source Code]
-    [Documentation]
-    [Release Notes]
-    [Binaries and Executables]
-    [Issue Tracking and Bug Reports]
-    [Test Cases and Test Results]
-    [Continuous Integration (CI) Configurations]
-    [Community Guidelines]
-    [Project Roadmap]
-    [Marketing Materials]
-    [License Information]
-    [Localizations and Translations]
+    folder "Code" {
+        [Source Code]
+        [Binaries and Executables]
+    }
+    folder "Documentation" {
+        [Documentation]
+        [Release Notes]
+        [License Information]
+    }
+    folder "Quality Assurance" {
+        [Issue Tracking and Bug Reports]
+        [Test Cases and Test Results]
+        [Continuous Integration (CI) Configurations]
+    }
+    folder "Community" {
+        [Community Guidelines]
+        [Project Roadmap]
+        [Marketing Materials]
+        [Localizations and Translations]
+    }
 }
 
 Inputs --> People_Roles
