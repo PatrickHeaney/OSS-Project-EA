@@ -152,7 +152,7 @@ folder "Outputs" #lightblue {
         [Source Code]
         [Binaries and Executables]
     }
-    folder "Documentation" {
+    folder "Documents" {
         [Documentation]
         [Release Notes]
         [License Information]
