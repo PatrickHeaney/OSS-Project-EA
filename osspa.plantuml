@@ -1,4 +1,4 @@
-@startuml
+@startuml osspea
 
 'cd "C:\Users\Dad\Python Projects\osspea"
 'git pull origin main'
@@ -23,7 +23,7 @@ folder "Inputs" #lightgreen {
     [Surveys and Polls]
 }
 
-folder "People_Roles" {
+folder "People_Roles_Community" {
     folder "Core Development" {
         :Maintainer:
         :Contributor:
@@ -142,7 +142,7 @@ together {
             [Lokalise]
         }
         folder "Metrics" {
-            [CHAOSS] #lightblue
+            [CHAOSS] [[https://github.com/chaoss]] #lightblue
         }
     }
 }
@@ -170,9 +170,9 @@ folder "Outputs" #lightblue {
     }
 }
 
-Inputs --> People_Roles
-People_Roles --> Processes
-People_Roles --> Tools
+Inputs --> People_Roles_Community
+People_Roles_Community --> Processes
+People_Roles_Community --> Tools
 Processes --> Outputs
 Tools --> Outputs
 
@@ -180,5 +180,17 @@ legend left
 |=Color |= Description |
 |<#ADD8E6>| Open Source Software Project |
 endlegend
+
+@enduml
+
+@startuml newpage
+
+title Community Engagement
+
+actor User
+participant "New System" as System
+
+User -> System: Request
+System --> User: Response
 
 @enduml
