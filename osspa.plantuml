@@ -9,9 +9,17 @@
 
 title Open Source Software (OSS) Project Enterprise Architecture
 
+skinparam dpi 80
 skinparam Style strict
+skinparam titleFontSize 150
+skinparam RectangleFontSize 70
+skinparam FolderFontSize 30
+skinparam componentFontSize 25
+skinparam actorFontSize 25
+skinparam svgBorderThickness 20
 
-folder "Inputs" #lightgreen {
+rectangle "Inputs" #lightgreen {
+    [Inspiration] #Gold
     [Requirements and Specifications]
     [Financial Support]
     [Hosting and Infrastructure]
@@ -23,7 +31,7 @@ folder "Inputs" #lightgreen {
     [Surveys and Polls]
 }
 
-folder "People_Roles_Community" {
+rectangle "People_Roles_Community" {
     folder "Core Development" {
         :Maintainer:
         :Contributor:
@@ -47,7 +55,7 @@ folder "People_Roles_Community" {
     }
 }
 together {
-    folder "Processes" {
+    rectangle "Processes" {
         folder "Commit" {
             [Developing]
             [Testing Commit]
@@ -59,11 +67,13 @@ together {
             [Reviewing]
             [Developing]
             [Testing PR]
+            [Merging]
+            [CI/CD]
+            [Releasing]
         }
         folder "Community Support" {
             [Planning]
             [Documenting]
-            [Releasing]
             [Monitoring]
             [Translating]
             [Community Engagement]
@@ -74,7 +84,7 @@ together {
         }
     }
 
-    folder "Tools" {
+    rectangle "Tools" {
         folder "Version Control" {
             [GitHub] 
             [Bitbucket] #lightblue
@@ -94,7 +104,7 @@ together {
         folder "Code Review" {
             [Review Board] #lightblue
         }
-        folder "Documents" {
+        folder "Create Documents" {
             [Sphinx] #lightblue
             [MkDocs] #lightblue
             [Jekyll] #lightblue
@@ -147,26 +157,39 @@ together {
     }
 }
 
-folder "Outputs" #lightblue {
+rectangle "Outputs" #lightblue {
+    folder "Individual" #Gold {
+        [Recognition]
+        [Satisfaction]
+        [Personal Growth]
+        [Skill Development]
+        [Portfolio Building]
+        [Networking]
+    }
     folder "Code" {
         [Source Code]
         [Binaries and Executables]
     }
-    folder "Documents" {
+    folder "Publications" {
         [Documentation]
         [Release Notes]
         [License Information]
+        [Meeting Notes]
+        [Meeting Presentations]
+        [Presentation Videos]
     }
-    folder "Quality Assurance" {
+    folder "Quality Contrel" {
         [Issue Tracking and Bug Reports]
         [Test Cases and Test Results]
         [Continuous Integration (CI) Configurations]
+        [Training Videos]
     }
     folder "Community" {
         [Community Guidelines]
         [Project Roadmap]
         [Marketing Materials]
         [Localizations and Translations]
+        [Meeting Schedule]
     }
 }
 
