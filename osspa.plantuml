@@ -178,7 +178,7 @@ rectangle "Outputs" #lightblue {
         [Meeting Presentations]
         [Presentation Videos]
     }
-    folder "Quality Contrel" {
+    folder "Quality Control" {
         [Issue Tracking and Bug Reports]
         [Test Cases and Test Results]
         [Continuous Integration (CI) Configurations]
